@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice - Home</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/homeResponsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <script>
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <header>
+    <h1>Panel de Proyectos</h1>
+    <button id="logoutBtn">Cerrar sesión</button>
+  </header>
+
+  <main>
+    <section id="welcome">
+      <h2>Bienvenido</h2>
+      <p>Aquí se pondrán los proyectos para el avance 2, de momento queda así n_n</p>
+    </section>
+
+    <section id="projects-panel">
+      <h3>Mis Proyectos</h3>
+      <div id="project-list">
+        <!-- PENDIENTE P/ EL AVNCE 2 -->
+      </div>
+      <button id="addProjectBtn">Agregar Proyecto</button>
+    </section>
+  </main>
+
+  <script src="js/home.js"></script>
+</body>
+</html>

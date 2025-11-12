@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice - Registro</title>
+    <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/registerResponsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="register-container">
+    <div class="register-image"></div>
+    <div class="register-form">
+      <h2>Crea tu cuenta</h2>
+      <form id="registerForm">
+        <input type="text" id="name" placeholder="Nombre completo" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="text" id="itsonId" placeholder="ID ITSON (6 dígitos)" required minlength="6" maxlength="6">
+        <input type="password" id="password" placeholder="Contraseña" required minlength="6">
+        <button type="submit">Registrar</button>
+      </form>
+      <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+    </div>
+  </div>
+
+  <script src="js/register.js"></script>
+</body>
+</html>

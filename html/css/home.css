@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffbd5;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #6f977b;
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+#logoutBtn {
+  background-color: #2a9d8f;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#logoutBtn:hover {
+  background-color: #21867a;
+}
+
+main {
+  padding: 40px;
+}
+
+#welcome {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#projects-panel {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #eb5934;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#projects-panel h3 {
+  text-align: center;
+  color: #dbc448;
+}
+
+#addProjectBtn {
+  display: block;
+  margin: 30px auto 0 auto;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#addProjectBtn:hover {
+  background-color: #21867a;
+}

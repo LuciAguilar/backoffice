@@ -1,0 +1,94 @@
+/* MOBILE (máx. 480px)*/
+
+@media (max-width: 480px) {
+    .login-container {
+        flex-direction: column;
+        min-height: 105vh;
+    }
+
+    .login-image {
+        height: 180px;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+    }
+
+    .login-form {
+        flex: 1;
+        min-height: 400px;
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .login-form form {
+        width: 90%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .login-form h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .login-form input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+}
+
+
+/* TABLET (de 481px a 768px) */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        min-height: 110vh;
+    }
+
+    .login-image {
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+    }
+
+    .login-form {
+        flex: 1;
+        min-height: 400px;
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .login-form form {
+        width: 80%;
+        max-width: 300px;
+        margin: -3vh 10px -3px 10px;
+    }
+
+    .login-form h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .login-form input {
+        font-size: 15px;
+        padding: 10px;
+    }
+}

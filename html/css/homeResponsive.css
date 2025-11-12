@@ -1,0 +1,68 @@
+/* MOBILE (máx. 480px) */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  #logoutBtn {
+    width: 100%;
+    max-width: 200px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  #projects-panel {
+    padding: 20px;
+  }
+
+  #addProjectBtn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+
+/* TABLET (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  #logoutBtn {
+    width: auto;
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  main {
+    padding: 30px;
+  }
+
+  #projects-panel {
+    padding: 25px;
+    max-width: 600px;
+  }
+
+  #addProjectBtn {
+    width: auto;
+    padding: 10px 20px;
+  }
+}

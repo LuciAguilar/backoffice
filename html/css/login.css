@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf6f0;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Imagen de la izquierda */
+.login-image {
+    flex: 4;
+    background: url(../../img/Retro_seaa.jpg) center center/cover;
+}
+
+/* Formulario de la derecha */
+.login-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c5f1ad;
+    padding: 40px;
+}
+
+.login-form h2 {
+    color: #b979b4;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+}
+
+.login-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #b979b4;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.login-form input:focus {
+    border-color: #e76f51;
+    box-shadow: 0 0 4px #f4a261;
+}
+
+button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #21867a;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+a {
+    color: #4d8ad7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
