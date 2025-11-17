@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backoffice - Home</title>
+    <title>Backoffice - Mis Proyectos</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/homeResponsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -17,25 +17,52 @@
   </script>
 
   <header>
-    <h1>Panel de Proyectos</h1>
+    <h1>Mis Proyectos</h1>
     <button id="logoutBtn">Cerrar sesión</button>
   </header>
 
   <main>
-    <section id="welcome">
-      <h2>Bienvenido</h2>
-      <p>Aquí se pondrán los proyectos para el avance 2, de momento queda así n_n</p>
-    </section>
-
     <section id="projects-panel">
-      <h3>Mis Proyectos</h3>
-      <div id="project-list">
-        <!-- PENDIENTE P/ EL AVNCE 2 -->
-      </div>
+      <div id="project-list"></div>
       <button id="addProjectBtn">Agregar Proyecto</button>
     </section>
+
+    <form id="newProjectForm" style="display:none;">
+      <h3>Nuevo Proyecto</h3>
+      <input type="text" id="title" placeholder="Título del proyecto" required>
+      <textarea id="description" placeholder="Descripción" required></textarea>
+      <input type="text" id="technologies" placeholder="Tecnologías (separadas por comas)">
+      <input type="url" id="repository" placeholder="URL del repositorio">
+      <div class="form-buttons">
+        <button type="submit">Guardar</button>
+        <button type="button" id="cancelBtn">Cancelar</button>
+      </div>
+    </form>
+
+    <div id="project-detail" style="display:none;">
+      <h3>Detalle del Proyecto</h3>
+      <div id="detail-content"></div>
+      <button id="closeDetailBtn">Cerrar</button>
+    </div>
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
   <script src="js/home.js"></script>
+  
+  <script>
+    VANTA.RINGS({
+      el: "body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0x359b9b,
+      color: 0x6db120
+    })
+  </script>
 </body>
 </html>
