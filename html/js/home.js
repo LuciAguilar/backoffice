@@ -83,10 +83,19 @@ function renderProjects(projects) {
     return;
   }
 
+  // Tarjetas para cada proyecto:
   projects.forEach(p => {
     const div = document.createElement("div");
     div.classList.add("project-card");
+    
+    // Se incluye imagen si está disponible:
+    const imageHtml = p.images && p.images.length > 0 
+      ? `<img src="${p.images[0]}" alt="${p.title}" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">` 
+      : '';
+    
+    // Estructura de la tarjeta del proyecto:
     div.innerHTML = `
+      ${imageHtml}
       <h4>${p.title}</h4>
       <p>${p.description}</p>
       <p><strong>Tecnologías:</strong> ${p.technologies.join(", ")}</p>
@@ -99,6 +108,7 @@ function renderProjects(projects) {
     `;
     list.appendChild(div);
   });
+
 
   // EVENTOS: DETALLE
   document.querySelectorAll(".detail-btn").forEach(btn => {
@@ -113,6 +123,7 @@ function renderProjects(projects) {
     });
   });
 
+
   // EVENTOS: EDITAR
   document.querySelectorAll(".edit-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -121,6 +132,7 @@ function renderProjects(projects) {
       fillEditForm(project);
     });
   });
+
 
   // EVENTOS: ELIMINAR
   document.querySelectorAll(".delete-btn").forEach(btn => {
@@ -138,6 +150,7 @@ function renderProjects(projects) {
   });
 }
 
+
 // RELLENAR FORMULARIO PARA EDITAR
 function fillEditForm(project) {
   const form = document.getElementById("newProjectForm");
@@ -149,10 +162,16 @@ function fillEditForm(project) {
   form.dataset.editing = project._id;
 }
 
+
 // MOSTRAR DETALLE DEL PROYECTO
 function showProjectDetail(project) {
   const panel = document.getElementById("project-detail");
   const content = document.getElementById("detail-content");
+  
+  const imageHtml = project.images && project.images.length > 0 
+    ? `<img src="${project.images[0]}" alt="${project.title}" style="width: 100%; max-width: 400px; border-radius: 8px; margin: 10px 0;">` 
+    : '';
+  
   content.innerHTML = `
     <p><strong>Título:</strong> ${project.title}</p>
     <p><strong>Descripción:</strong> ${project.description}</p>
@@ -167,6 +186,7 @@ function showProjectDetail(project) {
     panel.style.display = "none";
   };
 }
+
 
 // INICIAR HOME
 document.addEventListener("DOMContentLoaded", async () => {
@@ -193,6 +213,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     form.dataset.editing = "";
   });
 
+
   // CARGAR PROYECTOS EXISTENTES
   try {
     const projects = await getProjectsByUser();
@@ -201,6 +222,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error:", error.message);
   }
 
+
   // MOSTRAR / OCULTAR FORMULARIO NUEVO PROYECTO
   addBtn.addEventListener("click", () => {
     form.style.display = form.style.display === "none" ? "flex" : "none";
@@ -208,16 +230,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     form.reset();
   });
 
+
   // CREAR O ACTUALIZAR PROYECTO
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const imageUrl = document.getElementById("imageUrl").value.trim();
     const project = {
       title: document.getElementById("title").value,
       description: document.getElementById("description").value,
       technologies: document.getElementById("technologies").value.split(",").map(t => t.trim()).filter(Boolean),
       repository: document.getElementById("repository").value,
-      images: []
+      images: imageUrl ? [imageUrl] : []
     };
+
     try {
       if (form.dataset.editing) {
         await updateProject(form.dataset.editing, project);
@@ -228,8 +253,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       form.style.display = "none";
       const updated = await getProjectsByUser();
       renderProjects(updated);
+
     } catch (error) {
       console.error("Error al guardar:", error.message);
     }
+    
   });
 });
